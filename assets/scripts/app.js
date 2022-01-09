@@ -9,11 +9,11 @@ const LOG_EVENT_PLAYER_STRONG_ATTACK = 'PLAYER_STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_HEAL = 'HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
-let battleLog = [];
+const battleLog = [];
 
 
 function writeToLog (ev, val, playerHealth, monsterHelath){
-    let logEntry = {
+    logEntry = {
         event: ev,
         value: val,
         finalPlayerHealth: playerHealth,
@@ -57,35 +57,6 @@ function writeToLog (ev, val, playerHealth, monsterHelath){
             logEntry = {};
     }
 
-
-    // if (ev === LOG_EVENT_MONSTER_ATTACK){
-    //     logEntry.target = 'Player';
-    // } else if (ev === LOG_EVENT_PLAYER_ATTACK){
-    //     logEntry.target = 'Monster'
-    // } else if (ev === LOG_EVENT_PLAYER_STRONG_ATTACK){
-    //     logEntry = {
-    //         event: ev,
-    //         value: val,
-    //         target: 'Monster',
-    //         finalPlayerHealth: playerHealth,
-    //         finalMonsterHealth: monsterHelath
-    //     };
-    // } else if (ev === LOG_EVENT_HEAL){
-    //     logEntry = {
-    //         event: ev,
-    //         value: val,
-    //         target: 'Player',
-    //         finalPlayerHealth: playerHealth,
-    //         finalMonsterHealth: monsterHelath
-    //     };
-    // } else if (ev === LOG_EVENT_GAME_OVER){
-    //     logEntry = {
-    //         event: ev,
-    //         value: val,
-    //         finalPlayerHealth: playerHealth,
-    //         finalMonsterHealth: monsterHelath
-    //     };
-    // }
     battleLog.push(logEntry);
   
 }
@@ -104,7 +75,7 @@ function getMaxLifeValue(){
 try {
     choosenMaxLife = getMaxLifeValue();
 } catch (error) {
-    console.log(error);
+    console.error;
     choosenMaxLife = 100;
     alert('Invalid input, default value 100 was selected ');
 }
