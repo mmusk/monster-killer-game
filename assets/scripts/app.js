@@ -110,9 +110,9 @@ function endRound(){
     if (currentPlayerHealth <= 0 && hasBonus){
         hasBonus = false;
         removeBonusLife();
-        currentPlayerHealth = initialPlayerHealth;
-        setPlayerHealth(initialPlayerHealth);
+        currentPlayerHealth = choosenMaxLife;
         alert ('You would have died but bonus life saved you!')
+        setPlayerHealth(choosenMaxLife);
     }
 
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0){
